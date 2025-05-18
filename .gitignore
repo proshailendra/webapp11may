@@ -4,3 +4,8 @@
 
 /obj
 /bin/Debug/net9.0
+/DAL/bin/Debug/net9.0
+/DAL/obj
+/WebApp11May/bin/Debug/net9.0
+/WebApp11May/obj
+/.vs
