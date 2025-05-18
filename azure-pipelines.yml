@@ -42,3 +42,15 @@ steps:
     appName: 'webapp11may'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'Azure Subscription(4cc400bc-8706-4682-b513-3a847ab32c7f)'
+    AuthenticationType: 'server'
+    ServerName: 'tcp:webapp11mayserver.database.windows.net,1433'
+    DatabaseName: 'webapp11maydb'
+    SqlUsername: 'scholaradmin'
+    SqlPassword: 'Scholar@12345678'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Publish'
+    DacpacFile: '$(Build.ArtifactStagingDirectory)/drop/DemoDBProject.dacpac'
+    IpDetectionMethod: 'AutoDetect'
